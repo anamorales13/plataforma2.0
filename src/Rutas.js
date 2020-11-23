@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom';
 
 import RutasWeb from './RutasWeb';
 import InicioSesion from './components/InicioSesion';
@@ -14,7 +14,7 @@ import Join from './components/chat/Join';
 class Rutas extends Component{
     render(){
         return(
-            <BrowserRouter>
+            <HashRouter basename="/">
            
                 <Switch>
                    <Route exact path="/" component={pantallaInicial}/>
@@ -30,7 +30,7 @@ class Rutas extends Component{
                     
                 </Switch>
                 <div className="clearfix"></div>
-            </BrowserRouter>
+            </HashRouter>
             
         );
     }

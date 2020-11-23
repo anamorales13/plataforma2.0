@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom';
 import Inicio from './components/Inicio';
 import Informacion from "./components/Informacion";
 import Header from './components/Header';
@@ -36,7 +36,7 @@ class Rutas extends Component {
 
         var user;
         return (
-            <BrowserRouter>
+            <HashRouter basename="/">
                 <div className="grid-general">
                     <Header />
                     <div>
@@ -81,7 +81,7 @@ class Rutas extends Component {
 
                 </div>
 
-            </BrowserRouter>
+            </HashRouter>
 
         );
     }
