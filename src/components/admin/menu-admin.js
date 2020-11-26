@@ -9,7 +9,7 @@ class MenuMensajes extends Component {
 
         return (
 
-            <div className="menu-perfil menu-mensaje">
+            <div className="menu-perfil menu-mensaje" id="menu-admin">
 
                 <nav> <ul>
                     <li>

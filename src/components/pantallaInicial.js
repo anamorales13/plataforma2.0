@@ -71,35 +71,37 @@ class pantallaInicial extends Component {
 
                 <div className="grid-logo-inicio">
                     
-                    <div className="boton-alumno">
+                        <div className="boton-alumno">
 
-                        <h3 id="header-boton"> ALUMNOS </h3>
-                        <Link to={{
-                            pathname: '/inicioSesion',
-                            state: {
-                                tipo: 'alumno'
-                            }
-                        }}>
-                            <img src={imagen} width="200px" height="280px"></img>
-                        </Link>
-                    </div>
-                    <div className='boton-profesor' >
-                        <h3 id="header-boton-prof"> PROFESOR </h3>
-                        <Link to={{
-                            pathname: '/inicioSesion',
-                            state: {
-                                tipo: 'profesor'
-                            }
-                        }}>
-                            <img src={imagenprof} width="200px" height="280px"></img>
-                        </Link>
-                    </div>
-                    
-                    
+                            <h3 id="header-boton"> ALUMNOS </h3>
+                            <Link to={{
+                                pathname: '/inicioSesion',
+                                state: {
+                                    tipo: 'alumno'
+                                }
+                            }}>
+                                <img src={imagen} width="200px" height="280px"></img>
+                            </Link>
+
+
+                        </div>
+                        <div className='boton-profesor' >
+                            <h3 id="header-boton-prof"> PROFESOR </h3>
+                            <Link to={{
+                                pathname: '/inicioSesion',
+                                state: {
+                                    tipo: 'profesor'
+                                }
+                            }}>
+                                <img src={imagenprof} width="200px" height="280px"></img>
+                            </Link>
+                        </div>
+                   
+
                 </div>
                 <div id="administrador">
                     <label>¿Eres administrador?</label> <Link to={"/inicioAdministrador"}>Inicia sesión aquí</Link>
-                 </div>
+                </div>
             </div>
 
 

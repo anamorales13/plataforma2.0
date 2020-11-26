@@ -100,8 +100,8 @@ class InicioSesion extends Component {
 
 
                 localStorage.setItem('user', JSON.stringify(this.state.alumno));
-              //  localStorage.setItem('token', this.state.token);
-              //  localStorage.setItem('tipo', 'alumno');
+                //  localStorage.setItem('token', this.state.token);
+                //  localStorage.setItem('tipo', 'alumno');
                 this.router.navigateByUrl('/');
 
                 //  this.get_token();
@@ -136,7 +136,7 @@ class InicioSesion extends Component {
         return (
 
             <div>
-                {tipo == 'profesor' &&
+                {tipo === 'profesor' &&
                     <div className="grid-inicio">
                         <div className="logo-titulo">
                             <img src={imagenlogo} width="100px" height="80px"></img>
@@ -206,13 +206,13 @@ class InicioSesion extends Component {
                             </article>
                         </div>
                         <div id="administrador">
-                    <label>¿Eres administrador?</label> <Link to={"/inicioAdministrador"} style={{color:'blue'}}>Inicia sesión aquí</Link>
-                 </div>
+                            <label>¿Eres administrador?</label> <Link to={"/inicioAdministrador"} style={{ color: 'blue' }}>Inicia sesión aquí</Link>
+                        </div>
                     </div>
 
 
                 }
-                {tipo == 'alumno' &&
+                {tipo === 'alumno' &&
                     <div className="grid-inicio">
                         <div className="logo-titulo">
                             <img src={imagenlogo} width="100px" height="80px"></img>
@@ -283,11 +283,11 @@ class InicioSesion extends Component {
                             </div>
                         </div>
                         <div id="administrador">
-                    <label>¿Eres administrador?</label> <Link to={"/inicioAdministrador"}>Inicia sesión aquí</Link>
-                 </div>
+                            <label>¿Eres administrador?</label> <Link to={"/inicioAdministrador"}>Inicia sesión aquí</Link>
+                        </div>
                     </div>
                 }
-               
+
             </div>
 
 

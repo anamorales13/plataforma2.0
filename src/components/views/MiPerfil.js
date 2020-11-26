@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import Global from '../../Global';
 import MenuPerfil from './MenuPerfil';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import Card from 'react-bootstrap/Card';
 
 class MiPerfil extends Component {
 
@@ -70,25 +71,29 @@ class MiPerfil extends Component {
                         </Breadcrumb>
                     }
 
-                    <div className="avatar">
+                    <div className="avatar" id="avatar-big">
                         <img src={this.url + '/get-image-user/' + this.state.identity.image} classname="avatar"></img>
                     </div>
 
                     <div >
 
-                        <h1 className="titulo"> Infomación personal </h1>
+                        <h1 className="titulo"> Información personal </h1>
                         <div className="subtitulo">Es posible que otros usuarios puedan ver parte de la infomación al usar la plataforma. </div>
 
+                        <div className="avatar" id="avatar-responsive">
+                            <img src={this.url + '/get-image-user/' + this.state.identity.image} classname="avatar"></img>
+                        </div>
                         <article className="elemt-one">
 
                             <div className="elemt-form">
                                 <header >
                                     <h2 className="form-perfil-title">Perfil</h2>
-                                    <hr/>
+                                    <hr />
                                 </header>
                                 <div className="profesor-erasmus">
-                                    <h5><strong>Nombre: </strong> {this.state.identity.nombre + " " + this.state.identity.apellido1 + " " + this.state.identity.apellido2}</h5>
-                                    <h5><strong>Nombre de usuario: </strong> {this.state.identity.usuario}</h5>
+                                    <h5><strong>Nombre: </strong> {this.state.identity.nombre}</h5>
+                                    <h5><strong>Apellidos: </strong>{this.state.identity.apellido1 + " " + this.state.identity.apellido2}</h5>
+                                    <h5><strong>Usuario: </strong> {this.state.identity.usuario}</h5>
 
 
 
@@ -103,8 +108,8 @@ class MiPerfil extends Component {
                         <article className="elemt-one">
                             <div className="elemt-form">
                                 <header >
-                                    <h2 className="form-perfil-title">Informacion de contacto</h2>
-                                    <hr/>
+                                    <h2 className="form-perfil-title">Información de contacto</h2>
+                                    <hr />
 
                                 </header>
                                 <div className="profesor-erasmus">
@@ -112,7 +117,7 @@ class MiPerfil extends Component {
                                     <h5><strong>Correo electrónico: </strong>{this.state.identity.email}</h5>
                                     <h5><strong>Teléfono: </strong> {this.state.identity.telefono}</h5>
 
-                                    {this.state.identity.tipo == 'profesor' &&
+                                    {this.state.identity.tipo === 'profesor' &&
                                         <div>
                                             <h5><strong>Edificio: </strong>{this.state.identity.edificio}</h5>
                                             <h5>{this.state.identity.datos}</h5>
@@ -126,12 +131,12 @@ class MiPerfil extends Component {
 
 
                                 </div>
-                                </div>
+                            </div>
                         </article>
                     </div>
-                    </div>
+                </div>
 
-                </div >
+            </div >
         );
     }
 }

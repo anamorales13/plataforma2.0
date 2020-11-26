@@ -23,9 +23,10 @@ mongoose.Promise = global.Promise;
 
 
 
-//mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost:27017/baseerasmus",{ useUnifiedTopology: true, useNewUrlParser: true})
-mongoose.connect('mongodb+srv://anamorales13:vBac1UreWvszfgNe@plataforma.2cxua.mongodb.net/test?retryWrites=true&w=majority',{ useUnifiedTopology: true, useNewUrlParser: true})
-        .then(()=>{
+//
+//mongoose.connect('mongodb+srv://anamorales13:vBac1UreWvszfgNe@plataforma.2cxua.mongodb.net/test?retryWrites=true&w=majority',{ useUnifiedTopology: true, useNewUrlParser: true})
+mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost:27017/baseerasmus",{ useUnifiedTopology: true, useNewUrlParser: true})        
+.then(()=>{
             console.log('La conexion a la BD se ha realizado con exito');
 
             /*app.listen(port, ()=> {
@@ -48,6 +49,8 @@ const {addUser, removeUser, getUser, getUserInRoom} =require('./controllers/user
 server.listen(port, () => {
     console.log("Server running in http://localhost:"+port)
   })
+
+  
 
 client.on('connection', (socket) => {
    

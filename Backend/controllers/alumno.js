@@ -38,11 +38,6 @@ var controllers = {
     save: (req, res) => {
         var params = req.body;
 
-        console.log("nombre" + params.nombre);
-        console.log("email" + params.email);
-        console.log("apellido" + params.apellido1);
-        console.log("apellido" + params.apellido2);
-
         //1.- validar los datos
         try {
             var validate_nombre = !validator.isEmpty(params.nombre);
@@ -51,6 +46,7 @@ var controllers = {
             var validate_email = !validator.isEmpty(params.email);
             var validate_apellido1 = !validator.isEmpty(params.apellido1);
             var validate_apellido2 = !validator.isEmpty(params.apellido2);
+            var validate_dni = !validator.isEmpty(params.dni);
 
 
         } catch (err) {
@@ -59,14 +55,11 @@ var controllers = {
                 message: 'Faltan datos por enviar'
             });
         }
-        console.log(validate_nombre);
-        console.log(validate_apellido1);
-        console.log(validate_apellido2);
-        console.log(validate_email);
+      
 
 
 
-        if (validate_nombre && validate_apellido1 && validate_apellido2 && validate_email) {
+        if (validate_nombre && validate_apellido1 && validate_apellido2 && validate_email && validate_dni) {
 
             // 2- Crear el objeto a guardar
             var usuario = new Alumno();
@@ -80,6 +73,7 @@ var controllers = {
             usuario.apellido2 = params.apellido2;
             usuario.telefono = params.telefono;
             usuario.tipo = params.tipo;
+            usuario.dni= params.dni;
 
             usuario.image = 'user-default.jpg';
 
@@ -111,8 +105,10 @@ var controllers = {
 
             Alumno.find({
                 $and: [
-                    { email: { $eq: params.email.toLowerCase() } },
-                    { usuario: { $eq: params.usuario.toLowerCase() } }]
+                    { nombre: { $eq: params.nombre.toLowerCase() } },
+                    { apellido1: { $eq: params.apellido1.toLowerCase() } },
+                    { apellido2: { $eq: params.apellido2.toLowerCase() } },
+                  ]
             })
                 .exec((err, users) => {
                     if (err) return res.status(500).send({
@@ -838,6 +834,7 @@ var controllers = {
         }
 
         var itemsPerPage= 6;
+        console.log("userId" + userId);
         console.log("pagina" + page);
         
         Alumno.find({ profesor: { $eq: userId } }).populate('destino', 'pais ciudad carrera').paginate(page, itemsPerPage, (err, users, total) =>{

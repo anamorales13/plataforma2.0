@@ -37,7 +37,7 @@ class EditPerfil extends Component {
     apellido2Ref = React.createRef();
     imageRef = React.createRef();
     datosRef = React.createRef();
-    tutoriasRef= React.createRef();
+    tutoriasRef = React.createRef();
 
     url = Global.url;
 
@@ -270,14 +270,17 @@ class EditPerfil extends Component {
 
                     <div id="content" className="grid">
                         <MenuPerfil />
-                        <div className="avatar-edit">
+                        <div className="avatar-edit" id="avatar-big">
                             <img src={this.url + '/get-image-user/' + this.state.identity.image} classname=" avatar-edit"></img>
 
                         </div>
                         <div>
                             <h1 className="titulo"> Editar Perfil </h1>
+                            <div className="avatar-edit" id="avatar-responsive">
+                                <img src={this.url + '/get-image-user/' + this.state.identity.image} classname=" avatar-edit"></img>
 
-                            <article className="elemt-one">
+                            </div>
+                            <article className=" elemt-one-edit">
 
                                 <Form className="elemt-form" onSubmit={this.updateUser}>
                                     <Form.Group className="form-edit">
@@ -364,17 +367,20 @@ class EditPerfil extends Component {
                         </div>
                     </div>
                 }
-                {this.state.identity.tipo === 'profesor' &&
+                {this.state.identity.tipo === 'profesor' || this.state.identity.tipo === 'administrador' &&
                     <div id="content" className="grid">
                         <MenuPerfil />
-                        <div className="avatar-edit">
+                        <div className="avatar" id="avatar-big">
                             <img src={'http://localhost:3900/apiProfesor/get-image-user/' + this.state.identity.image} classname=" avatar-edit"></img>
 
                         </div>
                         <div>
                             <h1 className="titulo"> Editar Perfil </h1>
+                            <div className="avatar" id="avatar-responsive">
+                                <img src={'http://localhost:3900/apiProfesor/get-image-user/' + this.state.identity.image} classname=" avatar-edit"></img>
 
-                            <article className="elemt-one">
+                            </div>
+                            <article className="elemt-one-edit">
 
                                 <Form className="elemt-form" onSubmit={this.updateUserProfesor}>
                                     <Form.Group className="form-edit" style={{ marginBottom: '0.8em' }}>
@@ -446,7 +452,7 @@ class EditPerfil extends Component {
                                             onChange={this.changeStateProfesor}
                                             type="text"
                                             defaultValue={this.state.identity.edificio}
-                                            ref={this.edificioRef} 
+                                            ref={this.edificioRef}
                                             maxLength="50" />
                                         {this.validator.message('edificio', this.state.profesor.edificio, 'required', { className: 'text-danger' })}
                                     </Form.Group>
@@ -470,7 +476,7 @@ class EditPerfil extends Component {
                                             onChange={this.changeStateProfesor}
                                             type="textarea"
                                             defaultValue={this.state.identity.datos}
-                                            ref={this.datosRef} 
+                                            ref={this.datosRef}
                                             maxLength="80" />
 
                                     </Form.Group>
@@ -484,17 +490,17 @@ class EditPerfil extends Component {
                                             defaultValue={this.state.identity.tutoria}
                                             ref={this.tutoriasRef}
                                             maxLength="80"
-                                            />
+                                        />
 
                                     </Form.Group>
 
-                                    <input type="submit" value="ACTUALIZAR" className="btn-update" style={{float:'right'}}></input>
+                                    <input type="submit" value="ACTUALIZAR" className="btn-update" style={{ float: 'right' }}></input>
                                 </Form>
 
 
                             </article>
 
-                            <article className="elemt-one">
+                            <article className="elemt-one-edit">
                                 <form className="elemt-formImage" onSubmit={this.updateImageProfesor}>
                                     <div className="form-editImage">
                                         <label className="form-editImage-value-title">Imagen de perfil</label>

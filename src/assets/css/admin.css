@@ -2,6 +2,10 @@
   padding: 2rem 20rem;
 }
 
+.form-borrar-profesor{
+  padding: 2rem 20rem;
+}
+
 
 .grid-admin{
 
@@ -65,4 +69,40 @@
 
 .btn-style:hover{
   background-color:rgb(11, 151, 151);
+}
+
+
+
+/* RESPONSIVE */
+
+@media (max-width: 376px){
+
+  .titulo-doc{ 
+    font-size:28px; 
+  }
+  .card-bajas{
+    width: 300px;
+  }
+  .bajas h5 {
+    font-size: 20px !important;
+  }
+  .bajas label{
+    font-size: 20px !important;
+  }
+
+ .form-control{
+   width: 200px;
+ }
+
+ .form-borrar-profesor{
+ 
+     padding: 0;
+   
+ }
+}
+
+@media (max-width: 281px){
+  .card-bajas{
+    width:280px;
+  }
 }

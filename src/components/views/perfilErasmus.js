@@ -63,15 +63,13 @@ class MiPerfil extends Component {
 
         return (
 
-            <div id="content" className="grid">
+            <div id="content" className="grid-passw">
                 <MenuPerfil />
-                <div className="avatar-edit">
-                    <h1></h1>
-                </div>
+                
 
                 <div >
                     <h1 className="titulo"> Información ERASMUS </h1>
-                    <Card className="elemt-one">
+                    <Card className="elemt-one-passw">
                         <Card.Body>
                             <Card.Title className="form-perfil-title" style={{ borderBottom: '1px solid grey' }}>Coordinador de destino</Card.Title>
                             <div className="profesor-erasmus">
@@ -86,7 +84,7 @@ class MiPerfil extends Component {
 
                     </Card>
 
-                    <Card className="elemt-one">
+                    <Card className="elemt-one-passw">
                         <Card.Body>
                             <Card.Title className="form-perfil-title" style={{ borderBottom: '1px solid grey' }}>Coordinador de Centro</Card.Title>
                             <div className="profesor-erasmus">

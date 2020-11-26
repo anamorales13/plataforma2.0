@@ -109,7 +109,8 @@ class InicioSesion extends Component {
                         </div>
                         <hr className="linea"></hr>
 
-                            <article className="formulario-inicioAdministrador " style={{marginLeft:'540px'}}>
+                        <div className="centar-inicio-administrador">
+                            <article className="formulario-inicioAdministrador ">
                             <div className="cabecera-login" >
                                     <h3 className="title-login" style={{ fontSize: '25px' }}>INICIAR SESIÓN </h3>
                                     <h1 className="title-login" style={{ fontSize: '18px' }}><strong>ADMINISTRADOR</strong>   </h1>
@@ -141,7 +142,8 @@ class InicioSesion extends Component {
                                    
                                     <input type="submit" value="INICIAR SESIÓN" className="btn-login"></input>
                                 </form>
-                            </article>  
+                            </article>
+                        </div>  
                     </div>
                     <div id="administrador" style={{marginTop:'20px'}}>
                     <label>¿No eres administrador?</label> <Link to={"/"}>Inicia sesión aquí</Link>

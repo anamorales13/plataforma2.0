@@ -97,7 +97,7 @@ class DeleteProfesor extends Component {
 
     render() {
         return (
-            <div >
+            <div id="delete-profesor">
                 <h1 className="titulo-doc" style={{ marginBottom: '25px' }}>DAR DE BAJA PROFESOR</h1>
 
                 <Card className="card-bajas">
@@ -113,7 +113,7 @@ class DeleteProfesor extends Component {
                 </h5>
                         <label>¿Quiere seguir con la solicitud de la baja? <button onClick={this.mostrarFormulario}> SI </button></label>
                         <div id="form-baja-profesor" style={{ display: 'none' }}>
-                            <Form className="form-añadir-destino" >
+                            <Form className="form-borrar-profesor" >
                                 <Form.Group>
                                     <Form.Label style={{ fontSize: '16px' }}> Elige al profesor que desea dar de baja</Form.Label>
                                     <Form.Control as="select" onChange={this.handleChange('profesor')} type="profesor" >

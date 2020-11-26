@@ -16,6 +16,7 @@ const documentosOficialSchema = new Schema({
 var AlumnoSchema=Schema ({   
 
     nombre: String,
+    dni: String,
     apellido1: String, 
     apellido2: String,
     usuario: String, 

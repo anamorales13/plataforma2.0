@@ -85,6 +85,7 @@ export class Useform extends Component {
             usuario: this.state.usuario,
             password: this.state.password1,
             tipo: 'Alumno',
+          
 
         }
 

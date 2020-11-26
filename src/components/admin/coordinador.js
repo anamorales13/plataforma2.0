@@ -98,7 +98,7 @@ class Coordinador extends Component {
 
     render() {
         return (
-            <div >
+            <div id="delete-profesor">
                 <h1 className="titulo-doc" style={{ marginBottom: '25px' }}>CAMBIAR COORDINADOR DE CENTRO </h1>
 
                 <Card className="card-bajas">

@@ -258,7 +258,7 @@ class PasswordEdit extends Component {
             <div id="content" className="grid-passw">
                 <MenuPerfil />
                 <div>
-                    <h1 className="titulo-passw"> Contraseña </h1>
+                    <h1 className="titulo"> Contraseña </h1>
 
                     <article className="elemt-one-passw">
 

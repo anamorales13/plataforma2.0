@@ -75,18 +75,18 @@ export class FormDatosPersonales extends Component {
 
         //TELEFONO
 
-      if(this.props.tipo==='alumno'){
+        if (this.props.tipo === 'alumno') {
 
-      
-        if (this.props.values.telefono) {
-            if (!regexnumeros.test(this.props.values.telefono)) {
-                errors.telefono = "Número no valido";
+
+            if (this.props.values.telefono) {
+                if (!regexnumeros.test(this.props.values.telefono)) {
+                    errors.telefono = "Número no valido";
+                }
+            } else {
+                errors.telefono = "Campo obligatorio";
             }
-        }else{
-            errors.telefono="Campo obligatorio";
         }
-    }
-        
+
 
 
         return errors;
@@ -144,20 +144,22 @@ export class FormDatosPersonales extends Component {
 
                         <Card className="card-nuevoUser">
                             <Form>
-                                <Form.Group>
-
-                                    <Form.Control
-                                        onChange={handleChange('nombre')}
-                                        defaultValue={values.nombre}
-                                        type="text"
-                                        placeholder="Nombre *"
-                                        name="nombre"
-                                        value={values.nombre}
-                                        required
-                                        title="Introduce tu nombre."
-                                    />
-                                    {this.state.errors.nombre && <Form.Label style={{ color: 'red', fontSize: '12px' }}>{this.state.errors.nombre}</Form.Label>}
-                                </Form.Group>
+                                <Form.Row>
+                                                                    <Form.Group as={Col} >
+                                        <Form.Control
+                                            onChange={handleChange('nombre')}
+                                            defaultValue={values.nombre}
+                                            type="text"
+                                            placeholder="Nombre *"
+                                            name="nombre"
+                                            value={values.nombre}
+                                            required
+                                            title="Introduce tu nombre."
+                                        />
+                                        {this.state.errors.nombre && <Form.Label style={{ color: 'red', fontSize: '12px' }}>{this.state.errors.nombre}</Form.Label>}
+                                    </Form.Group>
+                                   
+                                </Form.Row>
 
                                 <Form.Row>
                                     <Form.Group as={Col} >
@@ -194,64 +196,64 @@ export class FormDatosPersonales extends Component {
                                                 name="email1" />
                                             {tipo == "alumno" &&
                                                 < div className="input-group-append">
-                                                <span className="input-group-text" style={{ fontSize: '14px', border: 'solid 1px rgb(153, 153, 153)' }}>@alu.uhu.es</span>
-                                            </div>
+                                                    <span className="input-group-text" style={{ fontSize: '14px', border: 'solid 1px rgb(153, 153, 153)' }}>@alu.uhu.es</span>
+                                                </div>
                                             }
 
 
                                         </InputGroup>
 
-                                    {this.state.errors.email1 && <Form.Label style={{ color: 'red', fontSize: '12px' }}>{this.state.errors.email1}</Form.Label>}
+                                        {this.state.errors.email1 && <Form.Label style={{ color: 'red', fontSize: '12px' }}>{this.state.errors.email1}</Form.Label>}
 
                                     </Form.Group>
-                                <Form.Group as={Col} >
-                                    <InputGroup>
-                                        <Form.Control
-                                            onChange={handleChange('email2')}
-                                            defaultValue={values.email2}
-                                            type="email"
-                                            placeholder="Repetir correo electrónico*"
-                                            name="email2" />
-                                         {tipo == "alumno" &&
+                                    <Form.Group as={Col} >
+                                        <InputGroup>
+                                            <Form.Control
+                                                onChange={handleChange('email2')}
+                                                defaultValue={values.email2}
+                                                type="email"
+                                                placeholder="Repetir correo electrónico*"
+                                                name="email2" />
+                                            {tipo == "alumno" &&
                                                 < div className="input-group-append">
-                                                <span className="input-group-text" style={{ fontSize: '14px', border: 'solid 1px rgb(153, 153, 153)' }}>@alu.uhu.es</span>
-                                            </div>
+                                                    <span className="input-group-text" style={{ fontSize: '14px', border: 'solid 1px rgb(153, 153, 153)' }}>@alu.uhu.es</span>
+                                                </div>
                                             }
 
-                                    </InputGroup>
-                                    {this.state.errors.email2 && <Form.Label style={{ color: 'red', fontSize: '12px' }}>{this.state.errors.email2}</Form.Label>}
-                                </Form.Group>
+                                        </InputGroup>
+                                        {this.state.errors.email2 && <Form.Label style={{ color: 'red', fontSize: '12px' }}>{this.state.errors.email2}</Form.Label>}
+                                    </Form.Group>
                                 </Form.Row>
-                            {tipo === 'alumno' &&
-                                <Form.Group >
+                                {tipo === 'alumno' &&
+                                    <Form.Group >
 
-                                    <Form.Control
-                                        onChange={handleChange('telefono')}
-                                        defaultValue={values.telefono}
-                                        type="phone"
-                                        name="phone"
-                                        placeholder="Teléfono" />
-                                    {this.state.errors.telefono && <Form.Label style={{ color: 'red', fontSize: '12px' }}>{this.state.errors.telefono}</Form.Label>}
-                                </Form.Group>
-                            }
+                                        <Form.Control
+                                            onChange={handleChange('telefono')}
+                                            defaultValue={values.telefono}
+                                            type="phone"
+                                            name="phone"
+                                            placeholder="Teléfono" />
+                                        {this.state.errors.telefono && <Form.Label style={{ color: 'red', fontSize: '12px' }}>{this.state.errors.telefono}</Form.Label>}
+                                    </Form.Group>
+                                }
 
-                            <button
-                                label="continue"
-                                className="btn-continue form-login"
-                                style={styles.button}
-                                onClick={this.continue}
-                            >   CONTINUAR </button>
+                                <button
+                                    label="continue"
+                                    className="btn-continue form-login"
+                                    style={styles.button}
+                                    onClick={this.continue}
+                                >   CONTINUAR </button>
                             </Form>
 
-                        <br></br>
+                            <br></br>
 
 
                         </Card>
 
+                    </div>
+
+
                 </div>
-
-
-            </div>
 
             </div >
         );

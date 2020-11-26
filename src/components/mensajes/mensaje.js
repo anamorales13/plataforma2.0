@@ -100,23 +100,29 @@ class mensaje extends Component {
                                 <h6 className="fecha"> <Moment format="DD-MM-YYYY">{mensajes.fecha}</Moment></h6>
                             </div>
                             {mensajes.emisor.profesor != null &&
-                                <h5  style={{fontSize:'15px'}}> {"    <" + mensajes.emisor.profesor.email + ">"} </h5>
+                                <h5 style={{ fontSize: '15px' }}> {"    <" + mensajes.emisor.profesor.email + ">"} </h5>
 
                             }
                             {mensajes.emisor.alumno != null &&
-                                <h5 style={{fontSize:'15px'}} > {"    <" + mensajes.emisor.alumno.email + ">"} </h5>
+                                <h5 style={{ fontSize: '15px' }} > {"    <" + mensajes.emisor.alumno.email + ">"} </h5>
 
                             }
 
-                           
+
                             <hr></hr>
                             <div className="pruebaresponder">
-                              <strong style={{ fontSize: '16px' }}>{mensajes.asunto}</strong>
-                                {mensajes.emisor.profesor != null &&  
-                                    <Link to={'/responder/'+ mensajes._id} params={{ mensajeId: mensajes._id, emisor: mensajes.emisor.profesor.email, texto:mensajes.texto }} className="responder" title="responder"><span className="glyphicon glyphicon-share-alt" style={{fontSize:'19px'}}> Responder</span></Link>
-                                 }
+                                <strong style={{ fontSize: '16px' }}>{mensajes.asunto}</strong>
+                                {mensajes.emisor.profesor != null &&
+                                    <Link to={'/responder/' + mensajes._id} params={{ mensajeId: mensajes._id, emisor: mensajes.emisor.profesor.email, texto: mensajes.texto }} className="responder" title="responder">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-90deg-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z" />
+                                        </svg>
+                                    </Link>
+                                }
                                 {mensajes.emisor.alumno != null &&
-                                    <Link to={'/responder/'+ mensajes._id} params={{ mensajeId: mensajes._id, emisor: mensajes.emisor.alumno.email, texto: mensajes.texto  }} className="responder" title="responder"><span className="glyphicon glyphicon-share-alt" style={{fontSize:'19px'}}> Responder</span></Link>
+                                    <Link to={'/responder/' + mensajes._id} params={{ mensajeId: mensajes._id, emisor: mensajes.emisor.alumno.email, texto: mensajes.texto }} className="responder" title="responder"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-90deg-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z" />
+                                    </svg></Link>
 
                                 }
 
@@ -125,7 +131,7 @@ class mensaje extends Component {
 
 
                             <Card.Text >
-                                <br/>
+                                <br />
                                 <label className="textarea-mostrarmensaje" readonly>{mensajes.texto}</label>
 
                             </Card.Text>

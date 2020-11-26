@@ -119,14 +119,14 @@ class destinos extends Component {
 
     render() {
         return (
-            <div>
+            <div >
                 <div id="content" className="grid-mensajeria-col">
 
                     <Menu></Menu>
                     <div>
-                        <div>
-                            <h1 className="titulo-doc"> GESTIÓN DE DESTINOS </h1></div>
-                        <div >
+                       
+                            <h1 className="titulo-doc"> NUEVO DESTINO </h1>
+                        <div className="form-destino" >
                             
                             <Form className="form-añadir-destino" onSubmit={this.añadirDestino}>
                                 <Form.Group controlId="formBasicEmail">

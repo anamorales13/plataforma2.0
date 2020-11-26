@@ -213,7 +213,7 @@ class editdestinos extends Component {
                         <div>
                             <Modal show={this.state.open} onHide={this.onCloseModal}>
                                 <Modal.Header closeButton>
-                                    <Modal.Title>Modal heading</Modal.Title>
+                                    <Modal.Title>Modificar coordinador</Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
                                     <Form>

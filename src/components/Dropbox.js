@@ -242,12 +242,12 @@ class Dropbox extends Component {
 
                         {this.props.match.params.nombre != null &&
                             <div>
-                                <h1 className="titulo-secundario">DROPBOX</h1>
+                                <h1 className="titulo-secundario">NUBE COMPARTIDA</h1>
                                 <h4 className="subtitulo-doc">Alumno: {this.props.match.params.nombre + " " + this.props.match.params.apellido1 + "  " + this.props.match.params.apellido2}</h4>
                             </div>
                         }
                         {this.state.identity.tipo === "Alumno" &&
-                            <h1 className="titulo-doc">DROPBOX</h1>
+                            <h1 className="titulo-doc">NUBE COMPARTIDA</h1>
                         }
 
                     </div>

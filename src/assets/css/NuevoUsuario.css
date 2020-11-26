@@ -242,9 +242,7 @@ table {
     
   }
 
-  table th{
-    overflow-x: auto;
-  }
+  
   
   table th,
   table td {
@@ -269,13 +267,13 @@ table {
     text-transform: uppercase;
   }
   
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 900px) {
     table {
       border: 0;
     }
   
     table caption {
-      font-size: 1.3em;
+      font-size: 1.6em;
     }
     
     table thead {
@@ -298,8 +296,10 @@ table {
     table td {
       border-bottom: 1px solid #ddd;
       display: block;
-      font-size: .8em;
+      font-size:1.1em;
       text-align: right;
+      width:100%;
+      text-align: center;
     }
     
     table td::before {
@@ -315,5 +315,12 @@ table {
     
     table td:last-child {
       border-bottom: 0;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+
+    table td{
+      font-size: .8em;
     }
   }

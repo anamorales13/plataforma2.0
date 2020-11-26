@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom';
 
 import RutasWeb from './RutasWeb';
@@ -11,27 +11,29 @@ import Chat from './components/chat/Chat';
 import Join from './components/chat/Join';
 
 
-class Rutas extends Component{
-    render(){
-        return(
-            <HashRouter basename="/">
+class Rutas extends Component {
+    render() {
+        return (
            
-                <Switch>
-                   <Route exact path="/" component={pantallaInicial}/>
-                    <Route exact path="/inicioSesion" component={InicioSesion}/>
-                    <Route exact path="/nuevoUsuario" component={Userform}/>
-                    <Route exact path='/nuevoProfesor' component={UseformProfesor}/>
-                    <Route exact path='/inicioAdministrador' component={InicioAdministrador}/>
-                        
-                    <Route exact path="/chat" component={Chat} />
-                    <Route exact path="/join" component={Join} />     
-                    <RutasWeb/>
 
-                    
-                </Switch>
-                <div className="clearfix"></div>
-            </HashRouter>
-            
+                <BrowserRouter>
+
+                    <Switch>
+                        <Route exact path="/" component={pantallaInicial} />
+                        <Route exact path="/inicioSesion" component={InicioSesion} />
+                        <Route exact path="/nuevoUsuario" component={Userform} />
+                        <Route exact path='/nuevoProfesor' component={UseformProfesor} />
+                        <Route exact path='/inicioAdministrador' component={InicioAdministrador} />
+
+                        <Route exact path="/chat" component={Chat} />
+                        <Route exact path="/join" component={Join} />
+                        <RutasWeb />
+
+
+                    </Switch>
+                    <div className="clearfix"></div>
+                </BrowserRouter>
+           
         );
     }
 }

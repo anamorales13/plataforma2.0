@@ -30,16 +30,18 @@ import coordinador from './components/admin/coordinador';
 import deleteProfesor from './components/admin/deleteProfesor';
 import responder from './components/mensajes/responder';
 
+import pruebas from './components/prueba';
+
 class Rutas extends Component {
 
     render() {
 
         var user;
         return (
-            <HashRouter basename="/">
-                <div className="grid-general">
+            <BrowserRouter>
+               <div className="grid-general" >
                     <Header />
-                    <div>
+                    <div /*className="container"*/>
                         <Switch>
                             <Route exact path="/inicio" component={Inicio} />
                             <Route exact path="/informacion" component={Informacion}></Route>
@@ -66,6 +68,8 @@ class Rutas extends Component {
                             <Route exact path="/solicitar_baja" component={baja}/>
                             <Route exact path="/cambiar-coordinador" component={coordinador} />
                             <Route exact path="/dar_de_baja" component={deleteProfesor}/>
+
+                          
                            
                             <RutasInicio />
                             {/*  <Route exact path="/" component={InicioSesion}/> */}
@@ -73,7 +77,7 @@ class Rutas extends Component {
 
 
                         </Switch>
-                    </div>
+                    </div >
                     <div className="clearfix">
                       
                     </div>
@@ -81,7 +85,7 @@ class Rutas extends Component {
 
                 </div>
 
-            </HashRouter>
+            </BrowserRouter>
 
         );
     }

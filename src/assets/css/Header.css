@@ -217,34 +217,41 @@ header nav{
     font-weight: bold;
   }
  
-@media(max-width: 800px){
+#icono-mensajes{
+    display:none;
+}
+#icono-chat{
+    display:none;
+}
 
-    #menuvar{
+@media(max-width: 1334px){
+
+   /* #menuvar{
         width: 70%;
         height: 100%;
         left:-100%;
         margin:0;
         position:fixed;
-    }
+    }*/
 
-    header nav ul li{
+   /* header nav ul li{
         display:block;
         float:none;
         border-bottom: 1px solid rgb(255,255,255, .3);
 
-    }
+    }*/
 
-    .menu_bar{
+  /*  .menu_bar{
         display: block;
         width: 100%;
         background: transparent;
         height: 60px;
-    }
+    }*/
 
-    .menu_bar #btn-menu{
+   /*.menu_bar #btn-menu{
         display: block;
         padding: 20px;
-       /* background: rgba(230, 228, 228, 0.664);*/
+      
        background: transparent;
         color: black;
         text-decoration: none;
@@ -253,10 +260,95 @@ header nav{
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-    }
+    }*/
 
-    .menu_bar span{
+  /*  .menu_bar span{
         float: left;
         font-size: 40px;
+    }*/
+
+    .menu{
+        display: none;
+    }
+
+    #logo img{
+        margin:auto;
+        margin-left: 20px;
+        height:80px;
+        width:80px;
+    }
+
+    #logo{
+        width:70%;
+    }
+
+    #icono-mensajes{
+        display:inline-block;
+        width: 12%;
+       
+        margin-top:auto;
+    }
+
+    #icono-chat{
+        display:inline-block;
+        width: 10%;
+        
+        margin-top:auto;
+    }
+
+    .logo-responsive{
+        display:inline-flex;
+        width: 100%;
+        background: rgba(230, 228, 228, 0.664);
+    }
+
+   
+}
+
+@media(max-width: 415px){
+
+    #icono-mensajes{
+        display:inline-block;
+        width: 20%;
+       
+        margin-top:auto;
+    }
+
+    #logo{
+        width: 70%;
+    }
+
+    #icono-chat{
+        display:inline-block;
+        width: 13%;
+        
+        margin-top:auto;
+    }
+
+    .profesor-erasmus{
+        text-align: left !important;
+    }
+}
+
+@media(max-width: 361px){
+    #logo{
+        width: 60%;
+    }
+}
+
+
+
+@media (max-width: 281px){
+
+    #logo{
+        width: 60%;
+    }
+
+    #icono-mensajes{
+        width: 25%;
+    }
+
+    .profesor-erasmus h5{
+        overflow: auto;
     }
 }
